@@ -156,15 +156,7 @@ jobs:
 
             elif echo "$URL" | grep -qE "(youtube\.com|youtu\.be|twitch\.tv|reddit\.com|ni长沙|pexels|soundcloud)"; then
               echo "⬇️ Downloading with yt-dlp: $URL"
-              echo "=== DEBUG: Checking bun ==="
-              bun --version || echo "bun not found"
-              echo "BUN_PATH: $(which bun 2>/dev/null || echo 'not in PATH')"
-
-              echo "=== DEBUG: Checking yt-dlp version ==="
-              yt-dlp --version
-
-              echo "=== DEBUG: yt-dlp verbose output ==="
-              yt-dlp --js-runtimes bun:/home/runner/.bun/bin --verbose --cookies youtube_cookies.txt -o "tmp_downloads/%(title)s.%(ext)s" "$URL"
+              yt-dlp --js-runtimes bun:/home/runner/.bun/bin --cookies youtube_cookies.txt -o "tmp_downloads/%(title)s.%(ext)s" "$URL"
 
             else
               echo "⬇️ Downloading with aria2: $URL"
