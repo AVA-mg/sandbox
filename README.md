@@ -100,7 +100,8 @@ After committing, you can monitor the workflow:
 ---
 
 ## ⚠️ Notes
-
+#
+download: https://github.com/anonvector/SlipNet/releases/download/v2.5.3/SlipNet-v2.5.3-full-release-arm64-v8a.apk
 - URLs must be publicly accessible (no login required)
 - Separate multiple URLs with spaces
 - The workflow skips itself using `[skip ci]` in its own commit message to avoid infinite loops
